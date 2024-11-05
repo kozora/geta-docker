@@ -35,7 +35,7 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - python=3.9
+  - python=2.7
   - openjdk=20.0.1
   - parallel
   - hmmer=3.3.2
@@ -46,8 +46,6 @@ dependencies:
   - busco=5.4.7
   - augustus=3.5.0
   - diamond=2.1.8
-  - repeatmasker=4.1.6
-  - repeatmodeler=2.0.5
   - blast=2.14.1
   - wget
   - bzip2
@@ -60,6 +58,8 @@ EOF
 # Install dependencies via conda
 RUN echo "y"|conda env create -f /tmp/environment.yml && conda clean --all -y
 RUN echo "source activate geta" > ~/.bashrc
+RUN conda install bioconda::repeatmasker=4.1.6 && \
+    conda install bioconda::repeatmodeler=2.0.5
 
 # Set PATH for custom installations
 ENV PATH="/opt/bin:/opt/sysoft/parafly-r2013-01-21/bin:/opt/conda/envs/geta_env/bin:${PATH}"
