@@ -35,7 +35,7 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - python=2.7
+  - python=3.8
   - openjdk=20.0.1
   - parallel
   - hmmer=3.3.2
