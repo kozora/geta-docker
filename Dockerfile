@@ -45,8 +45,6 @@ dependencies:
   - busco=5.4.7
   - augustus=3.5.0
   - diamond=2.1.8
-  - repeatmasker=4.1.6
-  - repeatmodeler=2.0.5
   - blast=2.14.1
   - wget
   - bzip2
