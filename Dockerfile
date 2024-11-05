@@ -57,8 +57,6 @@ EOF
 # Install dependencies via conda
 RUN echo "y"|conda env create -f /tmp/environment.yml && conda clean --all -y
 RUN echo "source activate geta" > ~/.bashrc
-RUN conda install bioconda::repeatmasker=4.1.6 && \
-    conda install bioconda::repeatmodeler=2.0.5
 
 # Set PATH for custom installations
 ENV PATH="/opt/bin:/opt/sysoft/parafly-r2013-01-21/bin:/opt/conda/envs/geta_env/bin:${PATH}"
