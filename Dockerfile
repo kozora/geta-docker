@@ -35,17 +35,18 @@ channels:
   - bioconda
   - defaults
 dependencies:
-  - python=3.8
-  - openjdk=20.0.1
+  - python=3.9
+  - openjdk=11  # Replaced with version 11 since 20.0.1 is not available
   - parallel
   - hmmer=3.3.2
-  - hisat2=2.1.0
+  - hisat2=2.2.1  # Updated version to ensure compatibility with Python 3.9
   - samtools=1.17
   - mmseqs2
-  - genewise=2.4.1
   - busco=5.4.7
   - augustus=3.5.0
   - diamond=2.1.8
+  - repeatmasker=4.1.6
+  - repeatmodeler=2.0.5
   - blast=2.14.1
   - wget
   - bzip2
