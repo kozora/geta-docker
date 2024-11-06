@@ -1,12 +1,15 @@
-FROM rockylinux:9.2
+FROM centos:7
 
 # Switch to root user
 USER root
 
 # Update and install basic dependencies
-RUN dnf -y update && dnf -y install wget tar gzip make gcc gcc-c++ cmake perl bzip2 xz unzip git \
+RUN sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/*.repo && \
+    sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/*.repo && \
+    sed -i s/^mirrorlist=http/#mirrorlist=http/g /etc/yum.repos.d/*.repo && \
+    yum -y update && yum -y install wget tar gzip make gcc gcc-c++ cmake perl bzip2 xz unzip git \
     curl libuuid-devel mariadb-connector-c-devel gsl gsl-devel sqlite sqlite-devel suitesparse \
-    suitesparse-devel && dnf clean all
+    suitesparse-devel && yum clean all
 
 # Create necessary directories
 RUN mkdir -p /opt/biosoft /opt/sysoft && chmod 1777 /opt/biosoft /opt/sysoft
