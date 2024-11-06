@@ -45,7 +45,7 @@ RUN wget http://ftp.ebi.ac.uk/pub/databases/Pfam/releases/Pfam37.0/Pfam-A.hmm.gz
     /opt/biosoft/hmmer-3.3.2/bin/hmmpress PfamB
 
 # Install RepeatMasker
-RUN wget http://repeatmasker.org/RepeatMasker/RepeatMasker-4.1.6.tar.gz -P ~/software && \
+RUN wget -O RepeatMasker-4.1.6.tar.gz 'https://www.dropbox.com/scl/fi/2cutawgda5z843z1eedzw/RepeatMasker-4.1.6.tar.gz?rlkey=8mfspzbmlq668ndgdfyqdup1h&st=ijlvzsav&dl=1' -P ~/software && \
     wget https://www.dfam.org/releases/Dfam_3.8/families/FamDB/dfam38_full.0.h5.gz -P ~/software && \
     wget https://www.dfam.org/releases/Dfam_3.8/families/FamDB/dfam38_full.5.h5.gz -P ~/software && \
     wget http://tandem.bu.edu/trf/downloads/trf409.linux64 -P ~/software/ && \
